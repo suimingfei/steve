@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<title>test</title>
+
+<style>
+.core {
+  background: radial-gradient(transparent 30%,rgba(255, 0, 255, .3) 100%);
+}
+.panel {
+  background: radial-gradient(transparent 30%,rgba(0,0,0,.3) 100%);
+}
+.panel:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+</style>
+
+<div id="test"></div>
+
+<script src="./Steve/Steve.js"></script>
+<script>
+const steve = new Steve();
+
+const core = steve.createCore(50, 50).putIn(document.body).moveTo(600, 100).release();
+const panel = steve.createPanel(30, 30).putIn(core).moveTo(0, 0).release();
+// const cube = steve.createCuboid(100, 100, 100);
+// steve.hold(cube).move(400, 300).putIn(document.body);
+// cube.style.transform = 'rotateX(-45deg) rotateY(45deg)'
+</script>
